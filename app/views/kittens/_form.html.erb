@@ -12,6 +12,14 @@
   <% end %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.label :Kitten_name %>
+    <%= form.text_field :name %><br>
+    <%= form.label :age %>
+    <%= form.select :age, (1..12).map{ |i| i == 1 ? ["#{i} month old", i] : ["#{i} months old", i] } %><br>
+    <%= form.label :cuteness %>
+    <%= form.text_field :cuteness %><br>
+    <%= form.label :softness %>
+    <%= form.text_field :softness %><br>
+    <%= form.submit %><br>
   </div>
 <% end %>
