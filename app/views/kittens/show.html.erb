@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+<br>
+Kitten name: <%= @kitten.name.humanize %><br>
+Age in month(s): <%= @kitten.age %><br>
+Cuteness: <%= @kitten.cuteness.humanize %><br>
+Softness: <%= @kitten.softness.humanize %><br>
 
-<%= link_to 'Edit', edit_kitten_path(@kitten) %> |
+<%= link_to 'Edit entry', edit_kitten_path(@kitten) %> |
+<%= link_to 'Remove entry', @kitten, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', kittens_path %>
