@@ -8,6 +8,10 @@ class KittensController < ApplicationController
 
   # GET /kittens/1 or /kittens/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @kitten }
+    end
   end
 
   # GET /kittens/new
@@ -65,6 +69,6 @@ class KittensController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def kitten_params
-      params.fetch(:kitten, {})
+      params.require(:kitten).permit(:name, :age, :cuteness, :softness)
     end
 end
